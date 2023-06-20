@@ -10,6 +10,7 @@ brew install neovim
 
 ### Plugins
 - [Packer](https://github.com/wbthomason/packer.nvim)
+- [bufferline](https://github.com/akinsho/bufferline.nvim)
 
 ## Reference
 ### Overall
