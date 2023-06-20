@@ -1,5 +1,3 @@
-
-
 -- >> nvim-hlslens
 local kopts = {noremap = true, silent = true}
 vim.api.nvim_set_keymap('n', 'n',
@@ -33,39 +31,3 @@ function _G.set_termianl_keymaps()
 end
 vim.cmd('autocmd! TermOpen term://* lua set_termianl_keymaps()')
 -- << ToggleTerm
-
-
--- >> LSP Server Manage
-require('mason').setup()
-require('mason-lspconfig').setup_handlers({ function(server)
-	local opt = {
-		capabilities = require('cmp_nvim_lsp').update_capabilities(
-			vim.lsp.protocol.make_client_capabilities()
-			)
-		}
-	require('lspconfig')[server].setup(opt)
-end })
--- << LSP
--- >> build in LSP function
-vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
--- << build in LSP function
--- >> Completion
-local cmp = require('cmp')
-cmp.setup({
-	snipett = {
-		expand = function(args)
-			vim.fn['vsnip#anonymous'](args.body)
-		end,
-	},
-	sources = {
-		{name = 'nvim_lsp'},
-	},
-	mapping = cmp.mapping.preset.insert({
-		['<C-p>'] = cmp.mapping.select_prev_item(),
-		['<C-n>'] = cmp.mapping.select_next_item(),
-		['<C-l>'] = cmp.mapping.complete(),
-		['<C-e>'] = cmp.mapping.abort(),
-	}),
-})
