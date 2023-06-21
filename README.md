@@ -10,6 +10,13 @@ neovim setup
 brew install neovim
 ```
 
+**Requirements**
+Some plugins require external libraries.
+You must install them with brew.
+
+- `tree-sitter` (you might have installed this.)
+
+
 **Plugin Install**
 1. Start neovim
 2. Automatically start installing Packer(PluginManager)

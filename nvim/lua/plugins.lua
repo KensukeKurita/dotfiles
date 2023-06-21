@@ -66,11 +66,13 @@ return require('packer').startup(function()
 	
     -- bufferline
     use 'akinsho/nvim-bufferline.lua'
-	
+
+    -- treesitter
+	use { 'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,}
+
 	-- >> git
 	use 'airblade/vim-gitgutter'
 	-- << git
-	
 
 	-- >> LSP
 	use 'neovim/nvim-lspconfig'
