@@ -37,9 +37,11 @@ You must use fonts which include icons previewed in sidebar and statusbar.
 - [lualine](https://github.com/) Status-Bar
 - [Markdown](https://github.com/iamcco/markdown-preview.nvim) Markdown Viewer via Web Browse
 - [sidebar](https://github.com/sidebar-nvim/sidebar.nvim) SideBar
+  
 **Others**
 - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens) Enhanced-Search
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter) Show git-diff
+  
 **LSP & cmp**
 
 ## Reference
