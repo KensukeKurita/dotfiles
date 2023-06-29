@@ -38,6 +38,8 @@ You must use fonts which include icons previewed in sidebar and statusbar.
 ### Overall
 - https://github.com/hisasann/neovim
 - https://github.com/craftzdog/dotfiles-public
+- https://github.com/Nyowa450/Neovim-with-lua
 ### Feature
 - [Neovimで全角スペースをハイライトする](https://zenn.dev/oppara/articles/neovim-highlight-full-width-whitespace)
 - [Neovim+LSPをなるべく簡単な設定で構築する](https://zenn.dev/botamotch/articles/21073d78bc68bf)
+- [Coc.nvim+init.vimからBuiltin LSP+init.luaに移行しました](https://zenn.dev/fukakusa_kadoma/articles/99e8f3ab855a56)
