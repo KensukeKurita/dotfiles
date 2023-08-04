@@ -60,7 +60,11 @@ return require('packer').startup(function()
 
 	-- search 
 	use 'kevinhwang91/nvim-hlslens'
-	
+
+    -- FuzzyFinder
+    use 'nvim-telescope/telescope.nvim'	
+    use 'nvim-telescope/telescope-file-browser.nvim'	
+
 	-- Terminal
 	use {'akinsho/toggleterm.nvim', tag='v2.*'}
 	
@@ -68,7 +72,9 @@ return require('packer').startup(function()
     use 'akinsho/nvim-bufferline.lua'
 
     -- treesitter
-	use { 'nvim-treesitter/nvim-treesitter', run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,}
+	use { 'nvim-treesitter/nvim-treesitter', 
+           run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
 
 	-- >> git
 	use 'airblade/vim-gitgutter'
@@ -82,5 +88,9 @@ return require('packer').startup(function()
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/cmp-buffer'
+    use 'onsails/lspkind-nvim'
 	-- <<
+    
+    use {'jose-elias-alvarez/null-ls.nvim', requires='nvim-lua/plenary.nvim'}
 end)
