@@ -4,6 +4,11 @@ fish setup
 brew install fish
 ```
 
+# karabiner
+## US-keyboard mapping
+かな = caps_lock + j
+英数 = caps_lock + f
+
 # nvim
 neovim setup
 ```bash
