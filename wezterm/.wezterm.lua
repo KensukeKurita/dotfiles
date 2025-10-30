@@ -22,8 +22,12 @@ config.audible_bell = 'Disabled'
 config.initial_cols = 120
 config.initial_rows = 28
 
--- or, changing the font size and color scheme.
-config.font_size = 10
+-- the font config
+config.font_size = 14
+-- https://github.com/yuru7/moralerspace
+config.font = wezterm.font 'Moralerspace Neon'
+
+-- colorscheme
 config.color_scheme = 'AdventureTime'
 
 -- Finally, return the configuration to wezterm:
