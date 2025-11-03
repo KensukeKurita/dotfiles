@@ -63,7 +63,3 @@ You must use fonts which include icons previewed in sidebar and statusbar.
 # Terminal
 - Wezterm
 - iTerm2
-
-# Terminal
-- Wezterm
-- iTerm2
