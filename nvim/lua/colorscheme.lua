@@ -1,6 +1,6 @@
 vim.cmd[[
 try
-    colorscheme nightfox
+    colorscheme terafox
 catch
     colorscheme default
 endtry

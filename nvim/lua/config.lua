@@ -8,8 +8,8 @@ local options = {
     showtabline = 2, -- タブのラベル名を常に表示. bufferlineとぶつかる
 	signcolumn = "yes", -- git差分用に行番号の左を空けておく
 	expandtab = true,
-	shiftwidth = 4,
-	tabstop = 4,
+	shiftwidth = 2,
+	tabstop = 2,
     cursorline = true,
     hlsearch = true,
     smartcase = true, 
@@ -22,16 +22,16 @@ end
 -- 全角スペース「　」のハイライト https://zenn.dev/oppara/articles/neovim-highlight-full-width-whitespace
 vim.api.nvim_command("highlight default ExtraWhitespace ctermbg=202 ctermfg=202 guibg=salmon")
 vim.api.nvim_create_augroup('extra-whitespace', {})
-vim.api.nvim_create_autocmd({'VimEnter', 'WinEnter'}, {
-    group = 'extra-whitespace',
-    pattern = {'*'},
-    command = [[call matchadd('ExtraWhitespace', '[\u200B\u3000]')]]
-})
-vim.api.nvim_create_autocmd({'ColorScheme'}, {
-    group = 'extra-whitespace',
-    pattern = {'*'},
-    command = [[highlight default ExtraWhitespace ctermbg=202 ctermfg=202 guibg=salmon]]
-})
+-- vim.api.nvim_create_autocmd({'VimEnter', 'WinEnter'}, {
+    -- group = 'extra-whitespace',
+    -- pattern = {'*'},
+    -- command = [[call matchadd('ExtraWhitespace', '[\u200B\u3000]')]]
+-- })
+-- vim.api.nvim_create_autocmd({'ColorScheme'}, {
+--    group = 'extra-whitespace',
+--     pattern = {'*'},
+    -- command = [[highlight default ExtraWhitespace ctermbg=202 ctermfg=202 guibg=salmon]]
+-- })
 
 --> keymap
 local opts = {noremap = true, silent = true}
