@@ -4,6 +4,30 @@ fish setup
 brew install fish
 ```
 
+# Bootstrap (symlink)
+新規端末では次のスクリプトで設定ファイルへのシンボリックリンクを一括作成できます。
+
+```bash
+./scripts/link-dotfiles.sh
+```
+
+確認だけしたい場合:
+```bash
+./scripts/link-dotfiles.sh --dry-run
+```
+
+既存ファイルをバックアップせず置き換える場合:
+```bash
+./scripts/link-dotfiles.sh --force
+```
+
+対象リンク:
+- `nvim` -> `~/.config/nvim`
+- `starship/starship.toml` -> `~/.config/starship.toml`
+- `wezterm/.wezterm.lua` -> `~/.wezterm.lua`
+- `codex/AGENTS.md` -> `~/.codex/AGENTS.md`
+- `karabiner/karabiner.json` -> `~/.config/karabiner/karabiner.json` (macOS only)
+
 # karabiner
 ## US-keyboard mapping
 かな = caps_lock + j
