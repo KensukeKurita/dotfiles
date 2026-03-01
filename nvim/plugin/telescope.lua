@@ -5,12 +5,7 @@ end
 
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
-
-local function telescope_buffer_dir()
-    return vim.fn.expand('%:p:h')
-end
-
-local fb_actions = require("telescope").extensions.file_browser.actions
+local fb_actions_status, fb_actions = pcall(require, "telescope._extensions.file_browser.actions")
 
 telescope.setup({
     defaults = {
@@ -24,16 +19,27 @@ telescope.setup({
             hijack_netrw = true,
             mappings = {
                 ["i"] = {["<C-w>"] = function() vim.cmd("normal vbd") end},
-                ["n"] = {["N"] = fb_actions.create}
+                ["n"] = fb_actions_status and {["N"] = fb_actions.create} or {}
             }
         }
     }
 })
 
+pcall(telescope.load_extension, "file_browser")
+
 vim.keymap.set("n", ";f",
     function()
         builtin.find_files({
             hidden = true
+        })
+    end
+)
+
+vim.keymap.set("n", ";e",
+    function()
+        telescope.extensions.file_browser.file_browser({
+            path = vim.fn.expand("%:p:h"),
+            select_buffer = true,
         })
     end
 )
