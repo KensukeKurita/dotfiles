@@ -13,7 +13,7 @@ local options = {
     cursorline = true,
     hlsearch = true,
     smartcase = true, 
-
+    clipboard = 'unnamedplus', -- クリップボードをMacと共有する
 }
 for k, v in pairs(options) do
     vim.opt[k] = v

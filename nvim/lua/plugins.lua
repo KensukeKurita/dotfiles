@@ -62,8 +62,14 @@ return require('packer').startup(function()
 	use 'kevinhwang91/nvim-hlslens'
 
     -- FuzzyFinder
-    use 'nvim-telescope/telescope.nvim'	
-    use 'nvim-telescope/telescope-file-browser.nvim'	
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
+    }
+    use {
+        'nvim-telescope/telescope-file-browser.nvim',
+        requires = { 'nvim-telescope/telescope.nvim' },
+    }
 
 	-- Terminal
 	use {'akinsho/toggleterm.nvim', tag='v2.*'}
